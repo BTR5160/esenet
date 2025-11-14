@@ -22,6 +22,12 @@ export const Registration = () => {
     role: '',
     company: '',
   });
+  const [ticketInfo, setTicketInfo] = useState<{
+    id: string;
+    qrDataUrl: string;
+    name: string;
+    email: string;
+  } | null>(null);
 
   // Your deployed Apps Script Web App URL
   const APPS_SCRIPT_URL =
@@ -38,6 +44,16 @@ export const Registration = () => {
     }
 
     setIsSubmitting(true);
+    setTicketInfo(null);
+
+    const generateTicketId = () => {
+      if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+        return crypto.randomUUID();
+      }
+      return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+    };
+
+    const ticketId = generateTicketId();
 
     const payload = {
       name: formData.name.trim(),
@@ -45,6 +61,43 @@ export const Registration = () => {
       phone: formData.phone.trim(),
       profile: formData.role,
       organization: formData.company.trim(),
+      ticketId,
+    };
+
+    const createTicket = async () => {
+      const qrContent = JSON.stringify({
+        ticketId,
+        name: payload.name,
+        email: payload.email,
+      });
+
+      const qrServiceUrl = `https://quickchart.io/qr?text=${encodeURIComponent(qrContent)}&margin=1&size=320&format=png`;
+      const response = await fetch(qrServiceUrl);
+
+      if (!response.ok) {
+        throw new Error(`QR service returned ${response.status}`);
+      }
+
+      const blob = await response.blob();
+      const qrDataUrl = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (typeof reader.result === 'string') {
+            resolve(reader.result);
+          } else {
+            reject(new Error('Invalid QR data result'));
+          }
+        };
+        reader.onerror = () => reject(reader.error ?? new Error('QR data parsing failed'));
+        reader.readAsDataURL(blob);
+      });
+
+      setTicketInfo({
+        id: ticketId,
+        qrDataUrl,
+        name: payload.name,
+        email: payload.email,
+      });
     };
 
     try {
@@ -72,6 +125,15 @@ export const Registration = () => {
           title: 'Inscription réussie!',
           description: 'Nous vous enverrons une confirmation par email.',
         });
+        try {
+          await createTicket();
+        } catch (qrError) {
+          console.error('QR code generation failed:', qrError);
+          toast({
+            title: 'QR code indisponible',
+            description: "Votre inscription est confirmée, mais le QR code n'a pas pu être généré. Réessayez dans quelques instants.",
+          });
+        }
         setFormData({ name: '', email: '', phone: '', role: '', company: '' });
       } else {
         const msg =
@@ -86,8 +148,8 @@ export const Registration = () => {
     } catch (err) {
       console.error('Network error:', err);
       toast({
-        title: 'Inscription réussie!',
-        description: 'Nous vous enverrons une confirmation par email.',
+        title: 'Erreur réseau',
+        description: "Votre inscription n'a pas pu être enregistrée. Veuillez réessayer.",
       });
     } finally {
       setIsSubmitting(false);
@@ -208,6 +270,38 @@ export const Registration = () => {
               L'accès à l'événement est gratuit pour tous les participants. Places limitées.
             </p>
           </div>
+
+          {ticketInfo && (
+            <div className="mt-10 p-8 rounded-xl bg-background border border-primary/30 shadow-glow">
+              <div className="text-center mb-6 space-y-2">
+                <h3 className="text-2xl font-semibold text-foreground">Votre billet numérique</h3>
+                <p className="text-sm text-muted-foreground">
+                  Conservez ce QR code : il vous sera demandé à l'accueil de l'évènement.
+                </p>
+              </div>
+
+              <div className="flex flex-col items-center gap-4">
+                <img
+                  src={ticketInfo.qrDataUrl}
+                  alt="QR code d'inscription"
+                  className="w-60 h-60 rounded-lg border border-border bg-white p-4"
+                />
+                <div className="text-center text-sm text-muted-foreground space-y-1">
+                  <p className="font-medium text-foreground">{ticketInfo.name}</p>
+                  <p>{ticketInfo.email}</p>
+                  <p>
+                    Code billet :{' '}
+                    <span className="font-mono text-xs bg-muted px-2 py-1 rounded-md">{ticketInfo.id}</span>
+                  </p>
+                </div>
+                <Button asChild variant="outline" size="sm">
+                  <a href={ticketInfo.qrDataUrl} download={`esenet-billet-${ticketInfo.id}.png`}>
+                    Télécharger le QR code
+                  </a>
+                </Button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
