@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +11,14 @@ import {
 } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export const Registration = () => {
   const { toast } = useToast();
@@ -28,6 +36,28 @@ export const Registration = () => {
     name: string;
     email: string;
   } | null>(null);
+  const [isTicketDialogOpen, setIsTicketDialogOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const savedTicket = window.localStorage.getItem('esenet-ticket');
+    if (!savedTicket) {
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(savedTicket);
+      if (parsed?.id && parsed?.qrDataUrl) {
+        setTicketInfo(parsed);
+      }
+    } catch (error) {
+      console.error('Unable to load saved ticket info:', error);
+      window.localStorage.removeItem('esenet-ticket');
+    }
+  }, []);
 
   // Your deployed Apps Script Web App URL
   const APPS_SCRIPT_URL =
@@ -92,12 +122,12 @@ export const Registration = () => {
         reader.readAsDataURL(blob);
       });
 
-      setTicketInfo({
+      return {
         id: ticketId,
         qrDataUrl,
         name: payload.name,
         email: payload.email,
-      });
+      };
     };
 
     try {
@@ -109,12 +139,18 @@ export const Registration = () => {
 
       // Read body ONCE as text, then try to parse JSON
       const raw = await res.text();
-      let data: any;
+      type AppsScriptResponse = {
+        ok?: boolean;
+        error?: unknown;
+        raw?: unknown;
+      };
+
+      let data: AppsScriptResponse | null = null;
       try {
-        data = JSON.parse(raw);
+        data = JSON.parse(raw) as AppsScriptResponse;
       } catch {
         // Accept plain "Success" responses too
-        data = { ok: raw.trim().toLowerCase() === 'success', raw };
+        data = { ok: raw.trim().toLowerCase() === 'success', raw } as AppsScriptResponse;
       }
 
       // Optional: inspect in console while debugging
@@ -126,7 +162,12 @@ export const Registration = () => {
           description: 'Nous vous enverrons une confirmation par email.',
         });
         try {
-          await createTicket();
+          const ticket = await createTicket();
+          setTicketInfo(ticket);
+          if (typeof window !== 'undefined') {
+            window.localStorage.setItem('esenet-ticket', JSON.stringify(ticket));
+          }
+          setIsTicketDialogOpen(true);
         } catch (qrError) {
           console.error('QR code generation failed:', qrError);
           toast({
@@ -276,16 +317,11 @@ export const Registration = () => {
               <div className="text-center mb-6 space-y-2">
                 <h3 className="text-2xl font-semibold text-foreground">Votre billet numérique</h3>
                 <p className="text-sm text-muted-foreground">
-                  Conservez ce QR code : il vous sera demandé à l'accueil de l'évènement.
+                  Votre billet est sauvegardé sur cet appareil pour que vous puissiez le retrouver rapidement.
                 </p>
               </div>
 
               <div className="flex flex-col items-center gap-4">
-                <img
-                  src={ticketInfo.qrDataUrl}
-                  alt="QR code d'inscription"
-                  className="w-60 h-60 rounded-lg border border-border bg-white p-4"
-                />
                 <div className="text-center text-sm text-muted-foreground space-y-1">
                   <p className="font-medium text-foreground">{ticketInfo.name}</p>
                   <p>{ticketInfo.email}</p>
@@ -294,16 +330,63 @@ export const Registration = () => {
                     <span className="font-mono text-xs bg-muted px-2 py-1 rounded-md">{ticketInfo.id}</span>
                   </p>
                 </div>
-                <Button asChild variant="outline" size="sm">
-                  <a href={ticketInfo.qrDataUrl} download={`esenet-billet-${ticketInfo.id}.png`}>
-                    Télécharger le QR code
-                  </a>
-                </Button>
+                <div className="flex flex-wrap justify-center gap-2">
+                  <Button onClick={() => setIsTicketDialogOpen(true)} size="sm">
+                    Afficher mon QR code
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <a href={ticketInfo.qrDataUrl} download={`esenet-billet-${ticketInfo.id}.png`}>
+                      Télécharger le QR code
+                    </a>
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground text-center max-w-xs">
+                  Astuce : gardez cette page en favori pour retrouver votre billet en un clin d'œil.
+                </p>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      <Dialog open={isTicketDialogOpen} onOpenChange={setIsTicketDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Votre QR code d'accès</DialogTitle>
+            <DialogDescription>
+              Présentez ce QR code à l'accueil de l'évènement pour valider votre inscription.
+            </DialogDescription>
+          </DialogHeader>
+
+          {ticketInfo && (
+            <div className="flex flex-col items-center gap-4">
+              <img
+                src={ticketInfo.qrDataUrl}
+                alt="QR code d'inscription"
+                className="w-64 h-64 rounded-lg border border-border bg-white p-4"
+              />
+              <div className="text-center text-sm text-muted-foreground space-y-1">
+                <p className="font-medium text-foreground">{ticketInfo.name}</p>
+                <p>{ticketInfo.email}</p>
+                <p>
+                  Code billet :{' '}
+                  <span className="font-mono text-xs bg-muted px-2 py-1 rounded-md">{ticketInfo.id}</span>
+                </p>
+              </div>
+            </div>
+          )}
+
+          {ticketInfo && (
+            <DialogFooter className="sm:justify-center">
+              <Button asChild variant="outline" size="sm">
+                <a href={ticketInfo.qrDataUrl} download={`esenet-billet-${ticketInfo.id}.png`}>
+                  Télécharger le QR code
+                </a>
+              </Button>
+            </DialogFooter>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
