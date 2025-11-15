@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -30,6 +30,8 @@ export const Registration = () => {
     role: '',
     company: '',
   });
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const resumeInputRef = useRef<HTMLInputElement | null>(null);
   const [ticketInfo, setTicketInfo] = useState<{
     id: string;
     qrDataUrl: string;
@@ -61,7 +63,51 @@ export const Registration = () => {
 
   // Your deployed Apps Script Web App URL
   const APPS_SCRIPT_URL =
-  'https://script.google.com/macros/s/AKfycbwwsWBTFz9UPCNdpNQkqfEFrVqB3puhqXfrQH7ZcWvRg9a8i5xnWNQv17JhaJw_Q1E/exec'
+    'https://script.google.com/macros/s/AKfycbwwsWBTFz9UPCNdpNQkqfEFrVqB3puhqXfrQH7ZcWvRg9a8i5xnWNQv17JhaJw_Q1E/exec';
+
+  const handleResumeChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (!file) {
+      setResumeFile(null);
+      return;
+    }
+
+    const maxSizeInBytes = 5 * 1024 * 1024; // 5 MB
+    if (file.size > maxSizeInBytes) {
+      toast({
+        title: 'Fichier trop volumineux',
+        description: 'Le CV doit être inférieur à 5 Mo.',
+      });
+      event.target.value = '';
+      setResumeFile(null);
+      return;
+    }
+
+    setResumeFile(file);
+  };
+
+  const handleResumeRemove = () => {
+    setResumeFile(null);
+    if (resumeInputRef.current) {
+      resumeInputRef.current.value = '';
+    }
+  };
+
+  const convertFileToDataUrl = (file: File) =>
+    new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        if (typeof reader.result === 'string') {
+          resolve(reader.result);
+        } else {
+          reject(new Error('Résultat de fichier invalide'));
+        }
+      };
+      reader.onerror = () => reject(reader.error ?? new Error("Lecture du fichier échouée"));
+      reader.readAsDataURL(file);
+    });
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
@@ -84,7 +130,49 @@ export const Registration = () => {
 
     const ticketId = generateTicketId();
 
-    const payload = {
+    let resumeAttachment:
+      | {
+          name: string;
+          type: string;
+          size: number;
+          dataUrl: string;
+        }
+      | undefined;
+
+    if (resumeFile) {
+      try {
+        const dataUrl = await convertFileToDataUrl(resumeFile);
+        resumeAttachment = {
+          name: resumeFile.name,
+          type: resumeFile.type || 'application/octet-stream',
+          size: resumeFile.size,
+          dataUrl,
+        };
+      } catch (fileError) {
+        console.error('Resume conversion failed:', fileError);
+        toast({
+          title: 'CV non valide',
+          description: "Nous n'avons pas pu lire votre CV. Veuillez réessayer.",
+        });
+        setIsSubmitting(false);
+        return;
+      }
+    }
+
+    const payload: {
+      name: string;
+      email: string;
+      phone: string;
+      profile: string;
+      organization: string;
+      ticketId: string;
+      resume?: {
+        name: string;
+        type: string;
+        size: number;
+        dataUrl: string;
+      };
+    } = {
       name: formData.name.trim(),
       email: formData.email.trim(),
       phone: formData.phone.trim(),
@@ -92,6 +180,10 @@ export const Registration = () => {
       organization: formData.company.trim(),
       ticketId,
     };
+
+    if (resumeAttachment) {
+      payload.resume = resumeAttachment;
+    }
 
     const createTicket = async () => {
       const qrContent = JSON.stringify({
@@ -175,6 +267,7 @@ export const Registration = () => {
           });
         }
         setFormData({ name: '', email: '', phone: '', role: '', company: '' });
+        handleResumeRemove();
       } else {
         const msg =
           (typeof data?.error === 'string' && data.error) ||
@@ -280,6 +373,40 @@ export const Registration = () => {
                 onChange={(e) => handleChange('company', e.target.value)}
                 placeholder="Votre organisation"
               />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="resume">CV (Optionnel)</Label>
+              <Input
+                id="resume"
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={handleResumeChange}
+                ref={resumeInputRef}
+                disabled={isSubmitting}
+              />
+              <p className="text-xs text-muted-foreground">
+                Formats acceptés : PDF, DOC, DOCX. Taille maximale : 5 Mo.
+              </p>
+              {resumeFile && (
+                <div className="rounded-md border border-dashed border-border bg-muted/40 p-3 text-xs text-muted-foreground">
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="truncate font-medium text-foreground">{resumeFile.name}</span>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      className="h-7 px-2 text-xs"
+                      onClick={handleResumeRemove}
+                    >
+                      Retirer
+                    </Button>
+                  </div>
+                  <p className="mt-1 text-muted-foreground/80">
+                    {(resumeFile.size / 1024).toFixed(0)} Ko • {resumeFile.type || 'Type inconnu'}
+                  </p>
+                </div>
+              )}
             </div>
 
             <Button
