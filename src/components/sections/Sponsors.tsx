@@ -58,14 +58,14 @@ export const Sponsors = () => {
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group p-12 rounded-xl bg-gradient-card border-2 border-primary/50 hover:border-primary transition-all hover:shadow-glow-strong ${
+                    className={`group relative overflow-hidden p-12 rounded-xl border-2 border-primary/50 bg-gradient-card backdrop-blur-sm transition-all hover:border-primary hover:shadow-glow-strong ${
                       platinumCount === 1 ? 'max-w-sm w-full' : ''
                     }`}
                   >
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-full h-32 object-contain group-hover:scale-110 transition-transform"
+                      className="w-full h-32 object-contain group-hover:scale-110 transition-transform filter drop-shadow-[0_3px_8px_rgba(0,0,0,0.18)] dark:drop-shadow-[0_3px_12px_rgba(255,255,255,0.35)] dark:brightness-[1.12] dark:contrast-[1.05]"
                     />
                   </a>
                 ))}
@@ -86,14 +86,14 @@ export const Sponsors = () => {
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group p-8 rounded-xl bg-gradient-card border border-secondary/50 hover:border-secondary transition-all hover:shadow-glow ${
+                    className={`group relative overflow-hidden p-8 rounded-xl border border-secondary/50 bg-gradient-card backdrop-blur-sm transition-all hover:border-secondary hover:shadow-glow ${
                       goldCount === 1 ? 'max-w-sm w-full' : ''
                     }`}
                   >
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-full h-24 object-contain group-hover:scale-110 transition-transform"
+                      className="w-full h-24 object-contain group-hover:scale-110 transition-transform filter drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)] dark:drop-shadow-[0_3px_12px_rgba(255,255,255,0.35)] dark:brightness-[1.12] dark:contrast-[1.05]"
                     />
                   </a>
                 ))}
@@ -114,14 +114,14 @@ export const Sponsors = () => {
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group p-6 rounded-xl bg-gradient-card border border-border hover:border-muted-foreground transition-all hover:shadow-glow ${
+                    className={`group relative overflow-hidden p-6 rounded-xl border border-border bg-gradient-card backdrop-blur-sm transition-all hover:border-muted-foreground hover:shadow-glow ${
                       silverCount === 1 ? 'max-w-sm w-full' : ''
                     }`}
                   >
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
-                      className="w-full h-16 object-contain group-hover:scale-110 transition-transform"
+                      className="w-full h-16 object-contain group-hover:scale-110 transition-transform filter drop-shadow-[0_2px_5px_rgba(0,0,0,0.16)] dark:drop-shadow-[0_3px_10px_rgba(255,255,255,0.32)] dark:brightness-[1.12] dark:contrast-[1.05]"
                     />
                   </a>
                 ))}
