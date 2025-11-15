@@ -21,11 +21,13 @@ export const Exhibitors = () => {
               className="group text-center animate-fade-in"
               style={{ animationDelay: `${index * 0.03}s` }}
             >
-              <div className="flex items-center justify-center mb-3 h-20">
+              <div
+                className="flex items-center justify-center mb-3 h-20 rounded-xl border border-border/40 bg-card/80 dark:bg-muted/30 shadow-card dark:shadow-none backdrop-blur-sm transition-colors"
+              >
                 <img
                   src={exhibitor.logo}
                   alt={exhibitor.name}
-                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+                  className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform filter drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)] dark:drop-shadow-[0_2px_10px_rgba(255,255,255,0.28)] dark:brightness-[1.15]"
                 />
               </div>
               <h3 className="text-sm font-medium text-foreground">
