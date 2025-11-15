@@ -7,6 +7,31 @@ export const Sponsors = () => {
     Silver: sponsors.filter(s => s.tier === 'Silver'),
   };
 
+  const platinumCount = sponsorsByTier.Platinum.length;
+  const goldCount = sponsorsByTier.Gold.length;
+  const silverCount = sponsorsByTier.Silver.length;
+
+  const platinumGridClasses = [
+    'grid grid-cols-1 gap-8 max-w-3xl mx-auto',
+    platinumCount > 1 ? 'md:grid-cols-2' : 'justify-items-center',
+  ].join(' ');
+
+  const goldGridClasses = [
+    'grid grid-cols-1 gap-6 max-w-4xl mx-auto',
+    goldCount > 2 ? 'md:grid-cols-3' : goldCount === 2 ? 'md:grid-cols-2' : 'justify-items-center',
+  ].join(' ');
+
+  const silverGridClasses = [
+    'grid grid-cols-1 gap-4 max-w-5xl mx-auto',
+    silverCount >= 4
+      ? 'md:grid-cols-4'
+      : silverCount === 3
+        ? 'md:grid-cols-3'
+        : silverCount === 2
+          ? 'md:grid-cols-2'
+          : 'justify-items-center',
+  ].join(' ');
+
   return (
     <section id="sponsors" className="py-20 bg-card/30">
       <div className="container mx-auto px-4">
@@ -21,19 +46,21 @@ export const Sponsors = () => {
 
         <div className="space-y-16">
           {/* Platinum Sponsors */}
-          {sponsorsByTier.Platinum.length > 0 && (
+          {platinumCount > 0 && (
             <div>
               <h3 className="text-2xl font-bold text-center mb-8 text-primary">
                 Sponsors Platinum
               </h3>
-              <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              <div className={platinumGridClasses}>
                 {sponsorsByTier.Platinum.map((sponsor) => (
                   <a
                     key={sponsor.id}
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-12 rounded-xl bg-gradient-card border-2 border-primary/50 hover:border-primary transition-all hover:shadow-glow-strong"
+                    className={`group p-12 rounded-xl bg-gradient-card border-2 border-primary/50 hover:border-primary transition-all hover:shadow-glow-strong ${
+                      platinumCount === 1 ? 'max-w-sm w-full' : ''
+                    }`}
                   >
                     <img
                       src={sponsor.logo}
@@ -47,19 +74,21 @@ export const Sponsors = () => {
           )}
 
           {/* Gold Sponsors */}
-          {sponsorsByTier.Gold.length > 0 && (
+          {goldCount > 0 && (
             <div>
               <h3 className="text-2xl font-bold text-center mb-8 text-secondary">
                 Sponsors Gold
               </h3>
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              <div className={goldGridClasses}>
                 {sponsorsByTier.Gold.map((sponsor) => (
                   <a
                     key={sponsor.id}
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-8 rounded-xl bg-gradient-card border border-secondary/50 hover:border-secondary transition-all hover:shadow-glow"
+                    className={`group p-8 rounded-xl bg-gradient-card border border-secondary/50 hover:border-secondary transition-all hover:shadow-glow ${
+                      goldCount === 1 ? 'max-w-sm w-full' : ''
+                    }`}
                   >
                     <img
                       src={sponsor.logo}
@@ -73,19 +102,21 @@ export const Sponsors = () => {
           )}
 
           {/* Silver Sponsors */}
-          {sponsorsByTier.Silver.length > 0 && (
+          {silverCount > 0 && (
             <div>
               <h3 className="text-2xl font-bold text-center mb-8 text-muted-foreground">
                 Sponsors Silver
               </h3>
-              <div className="grid md:grid-cols-4 gap-4 max-w-5xl mx-auto">
+              <div className={silverGridClasses}>
                 {sponsorsByTier.Silver.map((sponsor) => (
                   <a
                     key={sponsor.id}
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group p-6 rounded-xl bg-gradient-card border border-border hover:border-muted-foreground transition-all hover:shadow-glow"
+                    className={`group p-6 rounded-xl bg-gradient-card border border-border hover:border-muted-foreground transition-all hover:shadow-glow ${
+                      silverCount === 1 ? 'max-w-sm w-full' : ''
+                    }`}
                   >
                     <img
                       src={sponsor.logo}
