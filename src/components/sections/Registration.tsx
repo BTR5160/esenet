@@ -63,7 +63,7 @@ export const Registration = () => {
 
   // Your deployed Apps Script Web App URL
   const APPS_SCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbwwsWBTFz9UPCNdpNQkqfEFrVqB3puhqXfrQH7ZcWvRg9a8i5xnWNQv17JhaJw_Q1E/exec';
+    'https://script.google.com/macros/s/AKfycbye3hz9YOCu_TdBOawDsoEwGtLOKEWT9IGbxtu-oqPpKt3LUrgFXBh3TWEQVMPlkFwz/exec';
 
   const handleResumeChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];

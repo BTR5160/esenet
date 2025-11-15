@@ -177,17 +177,6 @@ export const speakers: Speaker[] = [
 
 export const exhibitors: Exhibitor[] = [
   {
-    id: "ex1",
-    name: "EY",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/EY.png",
-    website: "",
-    contact: "",
-    description: ""
-  },
-  {
     id: "ex2",
     name: "Ministére des Technologies de la communication",
     tagline: "",
@@ -199,34 +188,12 @@ export const exhibitors: Exhibitor[] = [
     description: ""
   },
   {
-    id: "ex3",
-    name: "Netcom Tunisia",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/Netcom Tunisia.png",
-    website: "",
-    contact: "",
-    description: ""
-  },
-  {
-    id: "ex4",
-    name: "Nety",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/nety.png",
-    website: "",
-    contact: "",
-    description: ""
-  },
-  {
     id: "ex5",
-    name: "roundesk",
+    name: "Ministere de l'education supérieur tunisie",
     tagline: "",
     category: "",
     booth: "",
-    logo: "src/assets/roundesk.png",
+    logo: "src/assets/MESRS.png",
     website: "",
     contact: "",
     description: ""
@@ -243,17 +210,6 @@ export const exhibitors: Exhibitor[] = [
     description: ""
   },
   {
-    id: "ex7",
-    name: "Sodino SICAR",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/Sodino SICAR.png",
-    website: "",
-    contact: "",
-    description: ""
-  },
-  {
     id: "ex8",
     name: "UMA",
     tagline: "",
@@ -264,6 +220,19 @@ export const exhibitors: Exhibitor[] = [
     contact: "",
     description: ""
   },
+  {
+    id: "ex17",
+    name: "ATB",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/atb.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  
+  
   {
     id: "ex9",
     name: "Wiki Start Up",
@@ -352,17 +321,7 @@ export const exhibitors: Exhibitor[] = [
     contact: "",
     description: ""
   },
-  {
-    id: "ex17",
-    name: "ATB",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/atb.png",
-    website: "",
-    contact: "",
-    description: ""
-  },
+  
   {
     id: "ex18",
     name: "ATODD",
@@ -462,17 +421,7 @@ export const exhibitors: Exhibitor[] = [
     contact: "",
     description: ""
   },
-  {
-    id: "ex28",
-    name: "Agence Colis Postaux Tunis Carthage ",
-    tagline: "",
-    category: "",
-    booth: "",
-    logo: "src/assets/Agence Colis Postaux Tunis Carthage .png",
-    website: "",
-    contact: "",
-    description: ""
-  },
+  
   {
     id: "ex29",
     name: "UMA PEE",
@@ -516,7 +465,103 @@ export const exhibitors: Exhibitor[] = [
     website: "",
     contact: "",
     description: ""
-  }
+  },
+  
+
+  {
+    id: "ex33",
+    name: "Ministère de l'économie et de la planification",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/mdici.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex1",
+    name: "EY",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/EY.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  
+  
+  {
+    id: "ex3",
+    name: "Netcom Tunisia",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Netcom Tunisia.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex4",
+    name: "Nety",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/nety.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  
+  
+  {
+    id: "ex7",
+    name: "Sodino SICAR",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Sodino SICAR.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex34",
+    name: "Facilis ai",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/facilis.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex34",
+    name: "Facilis ai",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/71f18a5e-02ac-4a09-8b12-6f093d2b9c4c (1).png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex34",
+    name: "APNA",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/image001.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+
+  
 ];
 
 
