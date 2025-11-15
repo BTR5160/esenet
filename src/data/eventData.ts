@@ -20,7 +20,7 @@ export interface Exhibitor {
   id: string;
   name: string;
   tagline: string;
-  category: 'Startup' | 'Recruiter' | 'Sponsor' | 'University';
+  category: string;
   booth: string;
   logo: string;
   website: string;
@@ -49,14 +49,14 @@ export const panels: Panel[] = [
     title: "Synapse Créatrice : AI-preneurs",
     time: "10:30 — 11:30",
     description: "Parcours d’AI-preneurs qui révolutionnent leurs secteurs avec des solutions innovantes et des modèles économiques durables.",
-    speakers: ["sp6", "sp7", "sp8", "sp9", "sp10"]
+    speakers: ["sp7", "sp8", "sp11" ,"sp12", "sp10","sp6"]
   },
   {
     id: "synapse-futur",
     title: "Synapse du Futur : ESEN Talent Network",
     time: "12:00 — 13:00",
     description: "Construire un réseau de talents pour soutenir l’écosystème IA et créer des ponts entre étudiants, experts et entreprises.",
-    speakers: ["sp5", "sp6", "sp9"]
+    speakers: ["sp9","sp13", "sp14", "sp15", "sp16"]
   }
 ];
 
@@ -73,7 +73,7 @@ export const speakers: Speaker[] = [
     name: "M. M’hamed Ben Abid",
     title: "Directeur Général Coopération du Climat des Affaires - Ministère de l’Economie et de la Planification",
     bio: "",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Mehdi"
+    photo: "src/assets/mhamed.png"
   },
   {
     id: "sp3",
@@ -133,10 +133,45 @@ export const speakers: Speaker[] = [
   },
   {
     id: "sp11",
-    name: "Dr. Fatima El Khoury",
-    title: "Legal Expert — Digital Rights Foundation",
+    name: "Aymen Chakhari",
+    title: "Co-fondateur - Roundesk",
     bio: "",
-    photo: "https://api.dicebear.com/7.x/avataaars/svg?seed=Fatima"
+    photo: "src/assets/aymen.png"
+  },
+  {
+    id: "sp12",
+    name: "Abdelkerim Rezgui",
+    title: "CEO - BI4YOU",
+    bio: "",
+    photo: "src/assets/abdelkerim_rezgui.png" 
+  },
+  {
+    id: "sp13",
+    name: "Bassem Thabti",
+    title: "CEO -  VIRTUALDEV",
+    bio: "",
+    photo: "src/assets/bassem.png" 
+  },
+  {
+    id: "sp14",
+    name: "Kamel Gazeh",
+    title: "CTO - Qualipro",
+    bio: "",
+    photo: "src/assets/kamel.png" 
+  },
+  {
+    id: "sp15",
+    name: "Youssef Seghaier",
+    title: "Technical Lead - Dar Blockchain",
+    bio: "",
+    photo: "src/assets/seghaier.png" 
+  },
+  {
+    id: "sp16",
+    name: "Youssouf MAIGA",
+    title: "résident APNA France - Consultant DevOps",
+    bio: "",
+    photo: "src/assets/photo_youssouf_maiga.png" 
   }
 ];
 
@@ -144,130 +179,369 @@ export const exhibitors: Exhibitor[] = [
   {
     id: "ex1",
     name: "EY",
-    tagline: "Enterprise analytics solutions",
-    category: "Startup",
-    booth: "A1",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/EY.png",
-    website: "https://example.com",
-    contact: "contact@aianalytics.com",
-    description: "Leading provider of AI-powered business intelligence and predictive analytics platforms for enterprises."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex2",
     name: "Ministére des Technologies de la communication",
-    tagline: "Cloud infrastructure & AI deployment",
-    category: "Sponsor",
-    booth: "A2",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/minis.png",
-    website: "https://example.com",
-    contact: "info@cloudtech.com",
-    description: "Scalable cloud infrastructure solutions designed for AI workloads and machine learning applications."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex3",
     name: "Netcom Tunisia",
-    tagline: "Connecting tech talent with opportunity",
-    category: "Recruiter",
-    booth: "B1",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/Netcom Tunisia.png",
-    website: "https://example.com",
-    contact: "careers@talenthub.com",
-    description: "Premier recruitment agency specializing in AI, data science, and tech roles across MENA region."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex4",
     name: "Nety",
-    tagline: "Advancing AI research & education",
-    category: "University",
-    booth: "B2",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/nety.png",
-    website: "https://example.com",
-    contact: "research@esen.tn",
-    description: "Leading research laboratory focusing on machine learning, computer vision, and natural language processing."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex5",
     name: "roundesk",
-    tagline: "Real-time data processing",
-    category: "Startup",
-    booth: "A3",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/roundesk.png",
-    website: "https://example.com",
-    contact: "hello@datastream.io",
-    description: "Next-generation streaming analytics platform for real-time business insights and decision-making."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex6",
     name: "S2T",
-    tagline: "AI security & compliance",
-    category: "Startup",
-    booth: "A4",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/S2T.png",
-    website: "https://example.com",
-    contact: "security@secureai.com",
-    description: "Cybersecurity solutions powered by AI to protect enterprises from emerging digital threats."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex7",
     name: "Sodino SICAR",
-    tagline: "Venture capital for AI startups",
-    category: "Sponsor",
-    booth: "A5",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/Sodino SICAR.png",
-    website: "https://example.com",
-    contact: "invest@innovatetech.vc",
-    description: "Early-stage VC firm investing in promising AI and deep tech startups across Africa and Europe."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex8",
     name: "UMA",
-    tagline: "Tech hiring made simple",
-    category: "Recruiter",
-    booth: "B3",
+    tagline: "",
+    category: "",
+    booth: "",
     logo: "src/assets/UMA.png",
-    website: "https://example.com",
-    contact: "jobs@devrecruit.com",
-    description: "AI-powered recruitment platform matching developers and data scientists with top companies."
+    website: "",
+    contact: "",
+    description: ""
   },
   {
     id: "ex9",
     name: "Wiki Start Up",
-    tagline: "Engineering excellence",
-    category: "University",
-    booth: "B4",
-    logo: "src/assets/Wiki Start Up.png",
-    website: "https://example.com",
-    contact: "contact@polytechnique.tn",
-    description: "Premier engineering school offering specialized programs in AI, robotics, and computer science."
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/wikistratup.png",
+    website: "",
+    contact: "",
+    description: ""
   },
- 
+  {
+    id: "ex10",
+    name: "Heads app",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/headapp.avif",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex11",
+    name: "Medianet",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/medianet.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex12",
+    name: "Startup village",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Startup village.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex13",
+    name: "PwC",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/pwc.svg",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex14",
+    name: "Qualipro",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/qualipro.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex15",
+    name: "STB",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/stb.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex16",
+    name: "Virtual Dev",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Virtual Dev.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex17",
+    name: "ATB",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/atb.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex18",
+    name: "ATODD",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/logo_atodd-m6LDGWZJlWToG5lo.png.avif",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex19",
+    name: "BI4You",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/BI4You.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex20",
+    name: "Intech solutions",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/InTech.webp",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex21",
+    name: "4InA technologie",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/logo4ina.d964e234.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex22",
+    name: "Bee coders",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Bee coders.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex23",
+    name: "OpusLab",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/opus lab.webp",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex25",
+    name: "TicDce",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/TicDce.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex26",
+    name: "Epic Valor X",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Epic Valor X.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex27",
+    name: "La poste",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/La poste.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex28",
+    name: "Agence Colis Postaux Tunis Carthage ",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Agence Colis Postaux Tunis Carthage .png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex29",
+    name: "UMA PEE",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/UMA PEE.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex30",
+    name: "BTE",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/BTE.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex31",
+    name: "Slayton",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/Slayton.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
+  {
+    id: "ex32",
+    name: "Dar Blockchaine",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "src/assets/dar blockchair.png.webp",
+    website: "",
+    contact: "",
+    description: ""
+  }
 ];
+
+
+
 
 export const sponsors: Sponsor[] = [
   {
     id: "s1",
-    name: "TechCorp International",
-    logo: "https://api.dicebear.com/7.x/shapes/svg?seed=TechCorp",
+    name: "ATB",
+    logo: "src/assets/atb.png",
     tier: "Platinum",
     website: "https://example.com"
-  },
-  {
-    id: "s2",
-    name: "Innovation Partners",
-    logo: "https://api.dicebear.com/7.x/shapes/svg?seed=Innovation",
-    tier: "Platinum",
-    website: "https://example.com"
-  },
+  }
   
 ];
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800",
-  "https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800",
-  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800",
-  "https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800",
-  "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800",
-  "https://images.unsplash.com/photo-1511578314322-379afb476865?w=800",
-  "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800",
-  "https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=800"
+  "src/assets/8.jpg",
+  "src/assets/1.jpg",
+  "src/assets/6.jpg",
+  "src/assets/3.jpg",
+  "src/assets/4.jpg",
+  "src/assets/5.jpg",
+  
+  "src/assets/7.jpg",
+  "src/assets/2.jpg",
+  
 ];

@@ -61,8 +61,7 @@ export const Registration = () => {
 
   // Your deployed Apps Script Web App URL
   const APPS_SCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbxnCJXI5B9yVZpIbvzi63t4TCv7Jdj7lxJOazmj4lvNWN9zqHlxXV9VGOBH9E6MyBLy/exec';
-
+  'https://script.google.com/macros/s/AKfycbwwsWBTFz9UPCNdpNQkqfEFrVqB3puhqXfrQH7ZcWvRg9a8i5xnWNQv17JhaJw_Q1E/exec'
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
