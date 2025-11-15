@@ -42,7 +42,7 @@ export const Hero = () => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-primary" />
-              <span className="text-lg">ESEN Manouba, Technopôle</span>
+              <span className="text-lg">Salle des Conférences Technopole Manouba</span>
             </div>
           </div>
           {/* CTAs */}
