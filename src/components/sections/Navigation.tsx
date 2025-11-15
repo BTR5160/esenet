@@ -27,7 +27,7 @@ export const Navigation = () => {
     { label: 'À Propos', id: 'about' },
     { label: 'Programme', id: 'program' },
     { label: 'Intervenants', id: 'speakers' },
-    { label: 'Exposants', id: 'exhibitors' },
+    { label: 'Exposants & Partenaires', id: 'exhibitors' },
     { label: 'Sponsors', id: 'sponsors' },
     { label: 'Galerie', id: 'gallery' },
   ];

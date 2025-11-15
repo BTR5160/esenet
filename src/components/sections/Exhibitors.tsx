@@ -7,14 +7,14 @@ export const Exhibitors = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Partenaires
+            Exposants & Partenaires
           </h2>
           <p className="text-lg text-muted-foreground">
             9 exposants présents pour vous accompagner dans votre parcours
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {exhibitors.map((exhibitor, index) => (
             <div
               key={exhibitor.id}

@@ -48,9 +48,6 @@ export const Sponsors = () => {
           {/* Platinum Sponsors */}
           {platinumCount > 0 && (
             <div>
-              <h3 className="text-2xl font-bold text-center mb-8 text-primary">
-                Sponsors Platinum
-              </h3>
               <div className={platinumGridClasses}>
                 {sponsorsByTier.Platinum.map((sponsor) => (
                   <a

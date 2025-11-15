@@ -23,7 +23,7 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Navigation</h4>
             <ul className="space-y-2 text-sm">
-              {['À Propos', 'Programme', 'Intervenants', 'Exposants', 'Sponsors'].map((item, index) => {
+              {['À Propos', 'Programme', 'Intervenants', 'Exposants & Partenaires', 'Sponsors'].map((item, index) => {
                 const ids = ['about', 'program', 'speakers', 'exhibitors', 'sponsors'];
                 return (
                   <li key={index}>
@@ -55,7 +55,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary" />
-                <span>ESEN Manouba<br />Technopôle de la Manouba, Tunisie</span>
+                <span>Salle des Conférences<br />Technopole Manouba, Tunisie</span>
               </li>
             </ul>
           </div>

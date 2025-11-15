@@ -34,7 +34,7 @@ export const About = () => {
           <p className="text-lg text-muted-foreground leading-relaxed">
             ESENet 7ème édition réunit les esprits les plus brillants de l'intelligence artificielle 
             et du monde des affaires. Rejoignez-nous pour une journée exceptionnelle d'apprentissage, 
-            de networking et d'innovation au cœur du Technopôle de la Manouba.
+            de networking et d'innovation au cœur de la Salle des Conférences du Technopole de la Manouba.
           </p>
         </div>
 
@@ -60,7 +60,7 @@ export const About = () => {
         <div className="mt-16 p-8 rounded-xl bg-gradient-card border border-primary/20">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-4xl font-bold text-primary mb-2">800+</div>
               <div className="text-muted-foreground">Participants</div>
             </div>
             <div>
@@ -68,7 +68,7 @@ export const About = () => {
               <div className="text-muted-foreground">Exposants</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">9</div>
+              <div className="text-4xl font-bold text-accent mb-2">17</div>
               <div className="text-muted-foreground">Intervenants</div>
             </div>
           </div>
