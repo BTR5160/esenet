@@ -49,7 +49,7 @@ export const Navigation = () => {
             <img
               src={logoo}
               alt="ESENet Logo"
-              style={{ height: "280px", width: "auto" }} // direct sizing
+              className="h-10 w-auto md:h-12"
             />
 
 
