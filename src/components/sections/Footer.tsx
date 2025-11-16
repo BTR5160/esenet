@@ -46,12 +46,8 @@ export const Footer = () => {
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-4 h-4 mt-0.5 text-primary" />
                 <a href="mailto:contact@esenet.tn" className="hover:text-primary transition-colors">
-                  contact@esenet.tn
+                  ambassadors@esen.tn
                 </a>
-              </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <Phone className="w-4 h-4 mt-0.5 text-primary" />
-                <span>+216 XX XXX XXX</span>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <MapPin className="w-4 h-4 mt-0.5 text-primary" />
@@ -65,10 +61,9 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4 text-foreground">Suivez-nous</h4>
             <div className="flex gap-3">
               {[
-                { icon: Facebook, href: '#' },
-                { icon: Twitter, href: '#' },
-                { icon: Linkedin, href: '#' },
-                { icon: Instagram, href: '#' },
+                { icon: Facebook, href: 'https://www.facebook.com/profile.php?id=61581579317140' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/school/esenien/posts/?feedView=all' },
+                { icon: Instagram, href: 'https://www.instagram.com/esenet.tn/' },
               ].map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -90,7 +85,7 @@ export const Footer = () => {
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; 2025 ESENet. Tous droits réservés.</p>
           <p className="mt-2">
-            Développé avec ❤️ par l'équipe ESENet
+            Développé par l'équipe ESENet
           </p>
         </div>
       </div>
