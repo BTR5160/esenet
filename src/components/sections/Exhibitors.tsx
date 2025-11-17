@@ -10,7 +10,7 @@ export const Exhibitors = () => {
             Exposants & Partenaires
           </h2>
           <p className="text-lg text-muted-foreground">
-            9 exposants présents pour vous accompagner dans votre parcours
+            35 exposants présents pour vous accompagner dans votre parcours
           </p>
         </div>
 

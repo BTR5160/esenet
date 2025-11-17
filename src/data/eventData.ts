@@ -66,112 +66,112 @@ export const speakers: Speaker[] = [
     name: "Mme. Wala Turki",
     title: "Conseillère auprès du Ministre - Ministère des Technologies de la Communication",
     bio: "",
-    photo: "public/assets/wala_turki.png"
+    photo: "assets/wala_turki.png"
   },
   {
     id: "sp2",
     name: "M. M’hamed Ben Abid",
     title: "Directeur Général Coopération du Climat des Affaires - Ministère de l’Economie et de la Planification",
     bio: "",
-    photo: "public/assets/mhamed.png"
+    photo: "assets/mhamed.png"
   },
   {
     id: "sp3",
     name: "M. Maher Lahmer ",
     title: "CTO - Facilis.ai Ex-Google, IBM",
     bio: "",
-    photo: "public/assets/maher_lahmer.png"
+    photo: "assets/maher_lahmer.png"
   },
   {
     id: "sp4",
     name: "Mme. Senda Boukef",
     title: "Directrice Stratégie Technologique et Transformation - EY",
     bio: "",
-    photo: "public/assets/senda_boukef.png"
+    photo: "assets/senda_boukef.png"
   },
   {
     id: "sp5",
     name: "M. Hichem Besbes",
     title: "Professeur Sup’Com - Expert National Principal désigné par l’UNESCO",
     bio: "",
-    photo: "public/assets/hichem_besbes.png"
+    photo: "assets/hichem_besbes.png"
   },
   {
     id: "sp6",
     name: "Amine Chouaieb",
     title: "CEO - Nety",
     bio: "",
-    photo: "public/assets/Amine_Chouaieb.png"
+    photo: "assets/Amine_Chouaieb.png"
   },
   {
     id: "sp7",
     name: "Samiha Selmani",
     title: "CEO - Sodino SICAR",
     bio: "",
-    photo: "public/assets/Samiha_Selmani.png"
+    photo: "assets/Samiha_Selmani.png"
   },
   {
     id: "sp8",
     name: "M. Karim Ahres",
     title: "CEO - Netcom Tunisia",
     bio: "",
-    photo: "public/assets/Karim_Ahres.png"
+    photo: "assets/Karim_Ahres.png"
   },
   {
     id: "sp9",
     name: "M. Mondher Kebiri",
-    title: "Business Development Manager - Roundesk",
+    title: "Business Development Manager - Slayton Solutions",
     bio: "",
-    photo: "public/assets/Mondher_Kebiri.png"
+    photo: "assets/Mondher_Kebiri.png"
   },
   {
     id: "sp10",
     name: "Chiraz Arfaoui",
     title: "CEO - Wiki Start Up",
     bio: "",
-    photo: "public/assets/chiraz_arfaoui.png"
+    photo: "assets/chiraz_arfaoui.png"
   },
   {
     id: "sp11",
     name: "Aymen Chakhari",
     title: "Co-fondateur - Roundesk",
     bio: "",
-    photo: "public/assets/aymen.png"
+    photo: "assets/aymen.png"
   },
   {
     id: "sp12",
     name: "Abdelkerim Rezgui",
     title: "CEO - BI4YOU",
     bio: "",
-    photo: "public/assets/abdelkerim_rezgui.png" 
+    photo: "assets/abdelkerim_rezgui.png" 
   },
   {
     id: "sp13",
     name: "Bassem Thabti",
     title: "CEO -  VIRTUALDEV",
     bio: "",
-    photo: "public/assets/bassem.png" 
+    photo: "assets/bassem.png" 
   },
   {
     id: "sp14",
     name: "Kamel Gazeh",
     title: "CTO - Qualipro",
     bio: "",
-    photo: "public/assets/kamel.png" 
+    photo: "assets/kamel.png" 
   },
   {
     id: "sp15",
     name: "Youssef Seghaier",
     title: "Technical Lead - Dar Blockchain",
     bio: "",
-    photo: "public/assets/seghaier.png" 
+    photo: "assets/seghaier.png" 
   },
   {
     id: "sp16",
     name: "Youssouf MAIGA",
     title: "résident APNA France - Consultant DevOps",
     bio: "",
-    photo: "public/assets/photo_youssouf_maiga.png" 
+    photo: "assets/photo_youssouf_maiga.png" 
   }
 ];
 
@@ -182,7 +182,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/minis.png",
+    logo: "assets/minis.png",
     website: "",
     contact: "",
     description: ""
@@ -193,7 +193,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/MESRS.png",
+    logo: "assets/MESRS.png",
     website: "",
     contact: "",
     description: ""
@@ -204,7 +204,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/S2T.png",
+    logo: "assets/S2T.png",
     website: "",
     contact: "",
     description: ""
@@ -215,7 +215,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/UMA.png",
+    logo: "assets/UMA.png",
     website: "",
     contact: "",
     description: ""
@@ -226,7 +226,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/atb.png",
+    logo: "assets/atb.png",
     website: "",
     contact: "",
     description: ""
@@ -239,7 +239,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/wikistratup.png",
+    logo: "assets/wikistratup.png",
     website: "",
     contact: "",
     description: ""
@@ -250,7 +250,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/headapp.avif",
+    logo: "assets/headapp.avif",
     website: "",
     contact: "",
     description: ""
@@ -261,7 +261,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/medianet.png",
+    logo: "assets/medianet.png",
     website: "",
     contact: "",
     description: ""
@@ -272,7 +272,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Startup village.png",
+    logo: "assets/Startup village.png",
     website: "",
     contact: "",
     description: ""
@@ -283,7 +283,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/pwc.svg",
+    logo: "assets/pwc.svg",
     website: "",
     contact: "",
     description: ""
@@ -294,7 +294,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/qualipro.png",
+    logo: "assets/qualipro.png",
     website: "",
     contact: "",
     description: ""
@@ -305,7 +305,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/stb.png",
+    logo: "assets/stb.png",
     website: "",
     contact: "",
     description: ""
@@ -316,7 +316,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Virtual Dev.png",
+    logo: "assets/Virtual Dev.png",
     website: "",
     contact: "",
     description: ""
@@ -328,7 +328,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/logo_atodd-m6LDGWZJlWToG5lo.png.avif",
+    logo: "assets/logo_atodd-m6LDGWZJlWToG5lo.png.avif",
     website: "",
     contact: "",
     description: ""
@@ -339,7 +339,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/BI4You.png",
+    logo: "assets/BI4You.png",
     website: "",
     contact: "",
     description: ""
@@ -350,7 +350,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/InTech.webp",
+    logo: "assets/InTech.webp",
     website: "",
     contact: "",
     description: ""
@@ -361,7 +361,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/logo4ina.d964e234.png",
+    logo: "assets/logo4ina.d964e234.png",
     website: "",
     contact: "",
     description: ""
@@ -372,7 +372,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Bee coders.png",
+    logo: "assets/Bee coders.png",
     website: "",
     contact: "",
     description: ""
@@ -383,7 +383,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/opus lab.webp",
+    logo: "assets/opus lab.webp",
     website: "",
     contact: "",
     description: ""
@@ -394,7 +394,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/TicDce.png",
+    logo: "assets/TicDce.png",
     website: "",
     contact: "",
     description: ""
@@ -405,7 +405,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Epic Valor X.png",
+    logo: "assets/Epic Valor X.png",
     website: "",
     contact: "",
     description: ""
@@ -416,7 +416,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/La poste.png",
+    logo: "assets/La poste.png",
     website: "",
     contact: "",
     description: ""
@@ -428,7 +428,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/UMA PEE.png",
+    logo: "assets/UMA PEE.png",
     website: "",
     contact: "",
     description: ""
@@ -439,7 +439,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/BTE.png",
+    logo: "assets/BTE.png",
     website: "",
     contact: "",
     description: ""
@@ -450,7 +450,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Slayton.png",
+    logo: "assets/Slayton.png",
     website: "",
     contact: "",
     description: ""
@@ -461,7 +461,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/dar blockchair.png.webp",
+    logo: "assets/dar blockchair.png.webp",
     website: "",
     contact: "",
     description: ""
@@ -474,7 +474,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/mdici.png",
+    logo: "assets/mdici.png",
     website: "",
     contact: "",
     description: ""
@@ -485,7 +485,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/EY.png",
+    logo: "assets/EY.png",
     website: "",
     contact: "",
     description: ""
@@ -498,7 +498,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Netcom Tunisia.png",
+    logo: "assets/Netcom Tunisia.png",
     website: "",
     contact: "",
     description: ""
@@ -509,7 +509,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/nety.png",
+    logo: "assets/nety.png",
     website: "",
     contact: "",
     description: ""
@@ -522,7 +522,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/Sodino SICAR.png",
+    logo: "assets/Sodino SICAR.png",
     website: "",
     contact: "",
     description: ""
@@ -533,7 +533,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/facilis.png",
+    logo: "assets/facilis.png",
     website: "",
     contact: "",
     description: ""
@@ -544,7 +544,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/71f18a5e-02ac-4a09-8b12-6f093d2b9c4c (1).png",
+    logo: "assets/71f18a5e-02ac-4a09-8b12-6f093d2b9c4c (1).png",
     website: "",
     contact: "",
     description: ""
@@ -555,7 +555,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "public/assets/image001.png",
+    logo: "assets/image001.png",
     website: "",
     contact: "",
     description: ""
@@ -571,7 +571,7 @@ export const sponsors: Sponsor[] = [
   {
     id: "s1",
     name: "ATB",
-    logo: "public/assets/atb.png",
+    logo: "assets/atb.png",
     tier: "Platinum",
     website: "https://example.com"
   }
@@ -579,14 +579,14 @@ export const sponsors: Sponsor[] = [
 ];
 
 export const galleryImages = [
-  "public/assets/8.jpg",
-  "public/assets/1.jpg",
-  "public/assets/6.jpg",
-  "public/assets/3.jpg",
-  "public/assets/4.jpg",
-  "public/assets/5.jpg",
+  "assets/8.jpg",
+  "assets/1.jpg",
+  "assets/6.jpg",
+  "assets/3.jpg",
+  "assets/4.jpg",
+  "assets/5.jpg",
   
-  "public/assets/7.jpg",
-  "public/assets/2.jpg",
+  "assets/7.jpg",
+  "assets/2.jpg",
   
 ];
