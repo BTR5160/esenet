@@ -42,10 +42,10 @@ export const Panels = () => {
                 </div>
 
                 <div
-                  className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${
+                  className={`grid grid-cols-2 gap-6 ${
                     hasFiveSpeakers
-                      ? 'lg:grid-cols-5 lg:justify-center'
-                      : 'lg:grid-cols-6'
+                      ? 'sm:grid-cols-3 lg:grid-cols-5 lg:justify-center'
+                      : 'sm:grid-cols-3 lg:grid-cols-6'
                   }`}
                 >
                   {panel.speakers.map(speakerId => {
