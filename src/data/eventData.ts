@@ -129,7 +129,7 @@ export const speakers: Speaker[] = [
     name: "Chiraz Arfaoui",
     title: "CEO - Wiki Start Up",
     bio: "",
-    photo: "assets/chiraz_arfaoui.png"
+    photo: "assets/Chiraz_Arfaoui.png"
   },
   {
     id: "sp11",
@@ -226,7 +226,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/atb.png",
+    logo: "assets/ATB.png",
     website: "",
     contact: "",
     description: ""
@@ -305,7 +305,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/stb.png",
+    logo: "assets/STB.png",
     website: "",
     contact: "",
     description: ""
@@ -316,7 +316,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/Virtual Dev.png",
+    logo: "assets/virtual dev.png",
     website: "",
     contact: "",
     description: ""
@@ -339,7 +339,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/BI4You.png",
+    logo: "assets/BI4YOU.png",
     website: "",
     contact: "",
     description: ""
@@ -372,7 +372,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/Bee coders.png",
+    logo: "assets/bee coders.png",
     website: "",
     contact: "",
     description: ""
@@ -394,7 +394,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/TicDce.png",
+    logo: "assets/ticdce.png",
     website: "",
     contact: "",
     description: ""
@@ -405,7 +405,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/Epic Valor X.png",
+    logo: "assets/epic valor x.png",
     website: "",
     contact: "",
     description: ""
@@ -416,7 +416,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/La poste.png",
+    logo: "assets/la poste.png",
     website: "",
     contact: "",
     description: ""
@@ -428,7 +428,7 @@ export const exhibitors: Exhibitor[] = [
     tagline: "",
     category: "",
     booth: "",
-    logo: "assets/UMA PEE.png",
+    logo: "assets/uma pee.png",
     website: "",
     contact: "",
     description: ""
@@ -571,7 +571,7 @@ export const sponsors: Sponsor[] = [
   {
     id: "s1",
     name: "ATB",
-    logo: "assets/atb.png",
+    logo: "assets/ATB.png",
     tier: "Platinum",
     website: "https://example.com"
   }
