@@ -582,6 +582,27 @@ export const exhibitors: Exhibitor[] = [
     contact: "",
     description: ""
   },
+  {
+    id: "ex35",
+    name: "Aneti",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "assets/Aneti.png",
+    website: "",
+    contact: "",
+    description: ""
+  },{
+    id: "ex35",
+    name: "Symatique",
+    tagline: "",
+    category: "",
+    booth: "",
+    logo: "assets/symatique.png",
+    website: "",
+    contact: "",
+    description: ""
+  },
 
   
 ];
