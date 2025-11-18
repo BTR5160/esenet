@@ -9,7 +9,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-background"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden hero-background text-white"
     >
       {/* Neural Network Background Animation */}
       <div className="absolute inset-0 z-0">
@@ -31,11 +31,11 @@ export const Hero = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-accent bg-clip-text text-transparent">
             Synapse: AI ∞ Business
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
             ESENet 7th Edition — Where Artificial Intelligence Meets Business Innovation
           </p>
           {/* Event Info */}
-          <div className="flex flex-wrap justify-center gap-6 mb-12 text-foreground">
+          <div className="flex flex-wrap justify-center gap-6 mb-12 text-white/90">
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5 text-primary" />
               <span className="text-lg">November 26, 2025</span>
