@@ -70,14 +70,14 @@ export const Program = () => {
       panelId: synapseCreatrice?.id,
     },
     {
-      time: '11:30',
+      time: '11:45',
       title: 'Pause Café',
       description: 'Moments d’échanges informels et networking.',
       icon: Coffee,
       type: 'break',
     },
     {
-      time: '12:00',
+      time: '12:15',
       title: synapseFutur?.title ?? 'Synapse du Futur : ESEN Talent Network',
       description: synapseFutur?.description,
       icon: Users,
@@ -85,7 +85,7 @@ export const Program = () => {
       panelId: synapseFutur?.id,
     },
     {
-      time: '13:00',
+      time: '13:30',
       title: 'Visite des Stands',
       description: 'Découverte des startups, partenaires et opportunités de recrutement.',
       icon: MapPin,

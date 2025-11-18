@@ -134,7 +134,7 @@ export const speakers: Speaker[] = [
   {
     id: "sp11",
     name: "Aymen Chakhari",
-    title: "Co-fondateur - Roundesk",
+    title: "Co-fondateur - SKILLIA",
     bio: "",
     photo: "assets/aymen.png"
   },
@@ -169,7 +169,7 @@ export const speakers: Speaker[] = [
   {
     id: "sp16",
     name: "Youssouf MAIGA",
-    title: "résident APNA France - Consultant DevOps",
+    title: "Président APNA France - Consultant DevOps",
     bio: "",
     photo: "assets/photo_youssouf_maiga.png" 
   }

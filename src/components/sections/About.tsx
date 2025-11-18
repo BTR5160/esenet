@@ -32,9 +32,9 @@ export const About = () => {
             À Propos d'ESENet 2025
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            ESENet 7ème édition réunit les esprits les plus brillants de l'intelligence artificielle 
-            et du monde des affaires. Rejoignez-nous pour une journée exceptionnelle d'apprentissage, 
-            de networking et d'innovation au cœur de la Salle des Conférences du Technopole de la Manouba.
+          L’ESEN organise la 7ᵉ édition de l’ESENet Talent Fair sous le thème « Synapse : IA ∞ Business », dédié au lien entre intelligence artificielle et monde des affaires.
+L’événement, tenu au Technopôle de la Manouba, réunit étudiants, entreprises et acteurs du numérique autour d’un espace d’échanges, d’innovation et de collaboration.
+Organisé par l’ESEN et le Comité Ambassadeur ESEN, avec la participation des clubs de l’école.
           </p>
         </div>
 
@@ -64,11 +64,11 @@ export const About = () => {
               <div className="text-muted-foreground">Participants</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-secondary mb-2">35</div>
+              <div className="text-4xl font-bold text-secondary mb-2">35+</div>
               <div className="text-muted-foreground">Exposants</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">17</div>
+              <div className="text-4xl font-bold text-accent mb-2">17+</div>
               <div className="text-muted-foreground">Intervenants</div>
             </div>
           </div>
