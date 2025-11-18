@@ -36,6 +36,14 @@ export interface Sponsor {
   website: string;
 }
 
+export const openingSession: Panel = {
+  id: "session-ouverture",
+  title: "Session d'ouverture",
+  time: "09:00 — 09:30",
+  description: "Mot d’ouverture et vision stratégique partagés par nos invités d’honneur.",
+  speakers: ["sp17", "sp18"],
+};
+
 export const panels: Panel[] = [
   {
     id: "synapse-fondamentale",
@@ -171,7 +179,21 @@ export const speakers: Speaker[] = [
     name: "Youssouf MAIGA",
     title: "résident APNA France - Consultant DevOps",
     bio: "",
-    photo: "assets/photo_youssouf_maiga.png" 
+    photo: "assets/photo_youssouf_maiga.png"
+  },
+  {
+    id: "sp17",
+    name: "Mme. Amel Ben Youssef",
+    title: "Directrice Générale - ESEN",
+    bio: "",
+    photo: "assets/placeholder-speaker.svg"
+  },
+  {
+    id: "sp18",
+    name: "M. Ahmed Trabelsi",
+    title: "Président - Association Synapse",
+    bio: "",
+    photo: "assets/placeholder-speaker.svg"
   }
 ];
 
