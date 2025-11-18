@@ -13,10 +13,15 @@ export const Panels = () => {
       .filter((speaker): speaker is NonNullable<typeof speaker> => Boolean(speaker));
     const hasFiveSpeakers = sessionSpeakers.length === 5;
     const gridClasses = isOpening
-      ? 'grid grid-cols-1 sm:grid-cols-2 gap-6'
+      ? 'grid grid-cols-1 sm:grid-cols-2 gap-6 place-items-center'
       : `grid grid-cols-2 gap-6 ${
           hasFiveSpeakers ? 'sm:grid-cols-3 lg:grid-cols-5 lg:justify-center' : 'sm:grid-cols-3 lg:grid-cols-6'
         }`;
+    const speakerCardClasses = isOpening ? 'flex flex-col items-center text-center' : '';
+    const imageWrapperClasses = `relative overflow-hidden rounded-lg mb-4 ${
+      isOpening ? 'w-full max-w-[220px] aspect-square mx-auto shadow-card' : ''
+    }`;
+    const imageClasses = isOpening ? 'w-full h-full object-cover' : 'w-full aspect-square object-cover';
 
     return (
       <div
@@ -46,9 +51,9 @@ export const Panels = () => {
 
         <div className={gridClasses}>
           {sessionSpeakers.map(speaker => (
-            <div key={speaker.id}>
-              <div className="relative overflow-hidden rounded-lg mb-4">
-                <img src={speaker.photo} alt={speaker.name} className="w-full aspect-square object-cover" />
+            <div key={speaker.id} className={speakerCardClasses}>
+              <div className={imageWrapperClasses}>
+                <img src={speaker.photo} alt={speaker.name} className={imageClasses} />
               </div>
               <h4 className="font-semibold text-foreground">{speaker.name}</h4>
               <p className="text-sm text-muted-foreground">{speaker.title}</p>
