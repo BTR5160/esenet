@@ -183,17 +183,17 @@ export const speakers: Speaker[] = [
   },
   {
     id: "sp17",
-    name: "Mme. Amel Ben Youssef",
-    title: "Directrice Générale - ESEN",
+    name: "M. Sofiene Hemissi",
+    title: "Ministre - Ministère des Technologies de la Communication",
     bio: "",
-    photo: "assets/placeholder-speaker.svg"
+    photo: "assets/hemissi.png"
   },
   {
     id: "sp18",
-    name: "M. Ahmed Trabelsi",
-    title: "Président - Association Synapse",
+    name: "M. Ameur Cherif",
+    title: "Président - Université de la Manouba",
     bio: "",
-    photo: "assets/placeholder-speaker.svg"
+    photo: "assets/amer.png"
   }
 ];
 
