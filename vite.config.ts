@@ -4,7 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/esenet/",             // 👈 Add this line
+  // 👇 IMPORTANT : racine du domaine
+  base: "/",
 
   server: {
     host: "::",
